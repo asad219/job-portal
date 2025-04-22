@@ -2,6 +2,7 @@
 "use client";
 import { Briefcase, Code, FileSql, Headset, PaintBrush, Tag } from "@phosphor-icons/react";
 import React from "react";
+import CategoryCard from "./CategoryCard";
 
 interface JobCategoryItem {
   id: number;
@@ -73,26 +74,18 @@ export default function JobCategory() {
           on user behavior and historical data.
         </p>
       </div>
-      <div
-        style={{
-          display: "flex flex-col",
-          justifyContent: "center",
-          flexWrap: "wrap",
-        }}
-      >
+      <div>
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
           {jobCategories.map((category) => (
 
-            <div className="justify-center overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-7"
-              key={category.id}>
-              <div className="flex justify-center items-center w-full mb-2">{category.icon}</div>
-              <h3 className="font-bold text-center">{category.title}</h3>
-              <p className="text-center">{category.description}</p>
-            <p className="text-[25px] text-blue-500 font-bold text-center">
-                ({category.count})
-            </p>
-              
-            </div>
+            <CategoryCard
+              key={category.id}
+              id={category.id}
+              title={category.title}
+              description={category.description}
+              icon={category.icon}
+              count={category.count} // Pass the count prop to CategoryCard
+            />
           ))}
         </div>
       </div>

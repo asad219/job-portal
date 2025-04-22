@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 - Social Icons */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-lg font-bold mb-3">FOLLOW US</h4>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white" aria-label="Facebook">
@@ -73,8 +73,8 @@ export default function Footer() {
           </div>
           {/* Column 3 - Social Icons */}
           <div>
-            <h4 className="text-lg font-bold mb-3">FOLLOW US</h4>
-            <div className="flex space-x-4">
+            
+            <div className="flex space-x-4 justify-center">
               <Image
                 className="invert"
                 src="/next.svg"

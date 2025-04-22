@@ -29,13 +29,13 @@ export default function Header() {
             Home
           </a>
           <a href="#">
-            About
+            Job Listing
           </a>
           <a href="#">
             Services
           </a>
           <a href="#">
-            Everyone
+            Contact
           </a>
         </nav>
 
@@ -108,7 +108,7 @@ export default function Header() {
               href="#"
               className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
             >
-              About
+              Job Listing
             </a>
             <a
               href="#"
