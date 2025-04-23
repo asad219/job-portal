@@ -1,8 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { Briefcase, Code, FileSql, Headset, PaintBrush, Tag } from "@phosphor-icons/react";
+import {
+  Briefcase,
+  Code,
+  FileSql,
+  Headset,
+  PaintBrush,
+  Tag,
+} from "@phosphor-icons/react";
 import React from "react";
 import CategoryCard from "./CategoryCard";
+
+interface JobCategoryItem {
+  id: number;
+  title: string;
+  description: string;
+  icon: any;
+  count?: number; // Optional property for count
+}
 
 interface JobCategoryItem {
   id: number;
@@ -34,27 +49,28 @@ const jobCategories: JobCategoryItem[] = [
     icon: <Briefcase size={60} />,
     count: 8,
   },
-    {
-        id: 4,
-        title: "Sales",
-        description: "Jobs related to sales, business development, and account management.",
-        icon: <Tag size={60} />,
-        count: 12,
-    },
-    {
-        id: 5,
-        title: "Customer Support",
-        description: "Jobs focused on customer service and support.",
-        icon: <Headset size={60} />,
-        count: 7,
-    },
-    {
-        id: 6,
-        title: "Data Science",
-        description: "Jobs related to data analysis, machine learning, and AI.",
-        icon: <FileSql size={60} />,
-        count: 15,
-    },
+  {
+    id: 4,
+    title: "Sales",
+    description:
+      "Jobs related to sales, business development, and account management.",
+    icon: <Tag size={60} />,
+    count: 12,
+  },
+  {
+    id: 5,
+    title: "Customer Support",
+    description: "Jobs focused on customer service and support.",
+    icon: <Headset size={60} />,
+    count: 7,
+  },
+  {
+    id: 6,
+    title: "Data Science",
+    description: "Jobs related to data analysis, machine learning, and AI.",
+    icon: <FileSql size={60} />,
+    count: 15,
+  },
 ];
 
 export default function JobCategory() {
@@ -65,19 +81,18 @@ export default function JobCategory() {
     >
       <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
         <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-        Browse Top Categories
+          Browse Top Categories
         </h2>
 
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           The product can personalize user experiences by understanding
           individual preferences and tailoring recommendations or content based
           on user behavior and historical data.
         </p>
       </div>
       <div>
-        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+        <div className="mx-auto grid justify-center gap-4 grid-cols-1 sm:grid-cols-1 md:max-w-[64rem] md:grid-cols-3">
           {jobCategories.map((category) => (
-
             <CategoryCard
               key={category.id}
               id={category.id}
